@@ -13,3 +13,13 @@ NEWSPIDER_MODULE = 'baidubuzz.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'baidubuzz (+http://www.yourdomain.com)'
+
+########### Item pipeline
+ITEM_PIPELINES = [
+	"baidubuzz.pipelines.ValidatePipeline",
+    "baidubuzz.pipelines.CouchDBPipeline",
+]
+
+COUCHDB_URL = 'http://couchdb.wearable.pw'
+COUCHDB_DB = 'baidu-buzz'
+
